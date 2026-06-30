@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ur" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maweshi Ghar — Bakra Bakri Dumba Sale</title>
+<style>
+:root{
+  --green:#2d6a2d;
+  --green-light:#4a9c4a;
+  --green-dark:#1a3f1a;
+  --gold:#c9a227;
+  --bg:#f5f9f2;
+  --bg-2:#e8f3e2;
+  --text:#1a2e1a;
+  --text-soft:#4a6b4a;
+  --card:#ffffff;
+  --border:#c5dcc0;
+  --shadow:0 8px 28px rgba(45,106,45,0.10);
+  --radius:14px;
+  --accent:#e8650a;
+}
+html[data-theme="dark"]{
+  --bg:#0e160e;--bg-2:#162016;--text:#e0f0d8;
+  --text-soft:#8ab88a;--card:#142014;--border:#2a402a;
+  --shadow:0 8px 28px rgba(0,0,0,0.45);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;}
+.ui{font-family:'Segoe UI',system-ui,sans-serif;}
+a{color:inherit;text-decoration:none;}
+
+/* TOPBAR */
+.topbar{background:var(--green-dark);color:#e0f0d8;text-align:center;padding:7px 12px;font-family:'Segoe UI',sans-serif;font-size:13px;letter-spacing:.4px;}
+.topbar span{color:var(--gold);font-weight:700;}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);}
+.nav{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:42px;height:42px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.logo-text{font-size:22px;font-weight:700;color:var(--green-dark);letter-spacing:.5px;}
+html[data-theme="dark"] .logo-text{color:var(--green-light);}
+.logo-sub{font-size:11px;color:var(--text-soft);font-family:'Segoe UI',sans-serif;letter-spacing:2px;}
+.navlinks{display:flex;gap:24px;font-family:'Segoe UI',sans-serif;font-size:14px;}
+.navlinks a:hover{color:var(--green);}
+.nav-right{display:flex;gap:10px;align-items:center;}
+.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:none;cursor:pointer;color:var(--text);font-size:16px;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.icon-btn:hover{border-color:var(--green);background:var(--bg-2);}
+.mob-menu-btn{display:none;}
+.mob-nav{display:none;flex-direction:column;border-top:1px solid var(--border);max-width:1180px;margin:0 auto;padding:0 20px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{padding:12px 4px;border-bottom:1px solid var(--border);font-family:'Segoe UI',sans-serif;font-size:15px;}
+
+/* HERO */
+.hero{max-width:1180px;margin:0 auto;padding:60px 20px 50px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+.hero-eyebrow{font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:14px;}
+.hero h1{font-size:46px;line-height:1.1;font-weight:700;margin-bottom:16px;}
+.hero h1 em{color:var(--green);font-style:normal;}
+.hero p{font-family:'Segoe UI',sans-serif;font-size:16px;color:var(--text-soft);line-height:1.7;margin-bottom:26px;max-width:460px;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{font-family:'Segoe UI',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border-radius:30px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s;letter-spacing:.3px;}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:var(--green-light);}
+.btn-ghost{background:transparent;border:2px solid var(--green);color:var(--green);}
+.btn-ghost:hover{background:var(--green);color:#fff;}
+.hero-visual{position:relative;height:360px;background:radial-gradient(circle at 40% 30%, var(--bg-2), transparent 70%);border-radius:24px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.goat-svg{animation:graze 5s ease-in-out infinite;}
+@keyframes graze{0%,100%{transform:translateX(0)}50%{transform:translateX(12px)}}
+.badge{position:absolute;background:var(--accent);color:#fff;font-family:'Segoe UI',sans-serif;font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;letter-spacing:.5px;}
+.badge-qurbani{top:16px;left:16px;}
+.badge-cod{bottom:16px;right:16px;background:var(--green);}
+
+/* STATS */
+.stats-bar{background:var(--green-dark);color:#e0f0d8;padding:20px;}
+.stats-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;font-family:'Segoe UI',sans-serif;}
+.stat-num{font-size:26px;font-weight:700;color:var(--gold);}
+.stat-label{font-size:12px;opacity:.8;margin-top:2px;}
+
+/* SECTION */
+.section{max-width:1180px;margin:0 auto;padding:56px 20px;}
+.sec-head{text-align:center;margin-bottom:38px;}
+.sec-eyebrow{font-family:'Segoe UI',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:8px;}
+.sec-head h2{font-size:30px;}
+
+/* FILTERS */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;font-family:'Segoe UI',sans-serif;}
+.fbtn{padding:8px 20px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text-soft);cursor:pointer;font-size:13px;transition:.2s;}
+.fbtn.active,.fbtn:hover{background:var(--green);color:#fff;border-color:var(--green);}
+
+/* PRODUCT GRID */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr;}}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s;display:flex;flex-direction:column;}
+.pcard:hover{transform:translateY(-5px);}
+.pcard-img{height:200px;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(160deg,var(--bg-2),var(--bg));}
+.pcard-img svg{height:140px;}
+.ptag{position:absolute;top:10px;left:10px;font-family:'Segoe UI',sans-serif;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;}
+.tag-qurbani{background:var(--accent);color:#fff;}
+.tag-available{background:var(--green);color:#fff;}
+.pcard-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;font-family:'Segoe UI',sans-serif;}
+.pcat{font-size:11px;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.pname{font-family:Georgia,serif;font-size:18px;margin-bottom:6px;}
+.pdetails{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;}
+.pdetail{font-size:12px;color:var(--text-soft);display:flex;align-items:center;gap:4px;}
+.pdesc{font-size:13px;color:var(--text-soft);line-height:1.5;flex:1;margin-bottom:14px;}
+.pfoot{display:flex;gap:8px;margin-top:auto;}
+.wa-btn{flex:1;background:#25d366;color:#fff;border:none;padding:10px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;transition:.2s;}
+.wa-btn:hover{background:#1da851;}
+.inquiry-btn{flex:1;background:var(--green);color:#fff;border:none;padding:10px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;transition:.2s;}
+.inquiry-btn:hover{background:var(--green-light);}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr);}}
+.feat{text-align:center;padding:28px 16px;border-radius:var(--radius);background:var(--card);border:1px solid var(--border);font-family:'Segoe UI',sans-serif;}
+.feat .ic{font-size:32px;margin-bottom:12px;}
+.feat h3{font-size:14px;margin-bottom:8px;}
+.feat p{font-size:13px;color:var(--text-soft);line-height:1.5;}
+
+/* DELIVERY */
+.delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--bg-2);border-radius:24px;padding:48px;}
+@media(max-width:800px){.delivery-grid{grid-template-columns:1fr;padding:28px;}}
+.delivery-grid h2{font-size:26px;margin-bottom:12px;}
+.delivery-grid p{color:var(--text-soft);font-family:'Segoe UI',sans-serif;line-height:1.7;margin-bottom:20px;}
+.dsteps{list-style:none;font-family:'Segoe UI',sans-serif;}
+.dsteps li{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;}
+.dnum{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+.dsteps b{display:block;font-size:14px;margin-bottom:2px;}
+.dsteps span{font-size:13px;color:var(--text-soft);}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:var(--shadow);font-family:'Segoe UI',sans-serif;}
+.contact-card h3{margin-bottom:16px;font-size:16px;}
+input,select,textarea{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;font-size:14px;margin-bottom:12px;}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-color:transparent;}
+label{font-size:12px;color:var(--text-soft);display:block;margin-bottom:4px;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:800px){.tgrid{grid-template-columns:1fr;}}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;font-family:'Segoe UI',sans-serif;}
+.tcard .stars{color:var(--gold);margin-bottom:10px;}
+.tcard p{font-size:14px;color:var(--text-soft);line-height:1.6;margin-bottom:12px;}
+.tcard .who{font-weight:700;font-size:14px;}
+.tcard .loc{font-size:12px;color:var(--text-soft);}
+
+/* CTA BANNER */
+.cta-banner{background:var(--green-dark);color:#e0f0d8;border-radius:24px;padding:48px;text-align:center;}
+.cta-banner h2{font-size:28px;margin-bottom:10px;}
+.cta-banner p{font-family:'Segoe UI',sans-serif;opacity:.85;margin-bottom:22px;}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 20px 22px;font-family:'Segoe UI',sans-serif;}
+.fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px;}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr 1fr;}}
+.fgrid h4{font-size:13px;margin-bottom:13px;text-transform:uppercase;letter-spacing:1px;}
+.fgrid ul{list-style:none;}
+.fgrid li{margin-bottom:9px;font-size:13px;color:var(--text-soft);}
+.fgrid li a:hover{color:var(--green);}
+.fbot{max-width:1180px;margin:0 auto;border-top:1px solid var(--border);padding-top:18px;font-size:12px;color:var(--text-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:99;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--card);border-radius:18px;max-width:460px;width:100%;padding:28px;font-family:'Segoe UI',sans-serif;max-height:90vh;overflow-y:auto;}
+.modal h3{font-family:Georgia,serif;margin-bottom:4px;}
+.modal .msub{color:var(--text-soft);font-size:13px;margin-bottom:18px;}
+.success-box{text-align:center;padding:20px 0;}
+.success-box .check{font-size:50px;margin-bottom:10px;}
+.close-x{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text);}
+
+/* THEME FAB */
+.theme-fab{position:fixed;bottom:80px;right:20px;z-index:150;background:var(--green);color:#fff;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;font-size:18px;box-shadow:0 4px 18px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;transition:.2s;}
+.theme-fab:hover{transform:scale(1.1);}
+.theme-panel{position:fixed;bottom:138px;right:20px;z-index:150;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,0.18);font-family:'Segoe UI',sans-serif;width:220px;display:none;flex-direction:column;gap:8px;}
+.theme-panel.open{display:flex;}
+.theme-panel h4{font-size:12px;color:var(--text-soft);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.trow{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;cursor:pointer;border:1px solid var(--border);}
+.trow:hover,.trow.active{background:var(--bg-2);border-color:var(--green);}
+.tdot{width:20px;height:20px;border-radius:50%;flex-shrink:0;}
+.tlabel{font-size:13px;color:var(--text);}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--green-dark);color:#e0f0d8;padding:12px 24px;border-radius:30px;font-family:'Segoe UI',sans-serif;font-size:14px;opacity:0;visibility:hidden;transition:.3s;z-index:200;}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+
+@media(max-width:900px){
+  .navlinks{display:none;}
+  .mob-menu-btn{display:flex;}
+  .hero{grid-template-columns:1fr;padding:36px 16px 36px;}
+  .hero h1{font-size:32px;}
+  .hero-visual{height:260px;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .section{padding:38px 16px;}
+  .sec-head h2{font-size:24px;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .fgrid{grid-template-columns:1fr;}
+  .cta-banner{padding:32px 20px;}
+  .cta-banner h2{font-size:22px;}
+  .fbot{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🐐 Pakistan bhar mein delivery available — <span>COD</span> option moujood hai | Call: 0315-2612680 | 0315-2292047 | 0310-1196654</div>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <div class="logo-icon">🐐</div>
+      <div>
+        <div class="logo-text">Maweshi Ghar</div>
+        <div class="logo-sub">BAKRA · BAKRI · DUMBA</div>
+      </div>
+    </div>
+    <nav class="navlinks ui">
+      <a href="#animals">Janwar</a>
+      <a href="#features">Kyun Hamse</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#contact">Rabta</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn mob-menu-btn ui" id="mobMenuBtn">☰</button>
+      <button class="icon-btn ui" id="themeToggle" title="Dark/Light mode">🌙</button>
+    </div>
+  </div>
+  <nav class="mob-nav ui" id="mobNav">
+    <a href="#animals">🐐 Janwar</a>
+    <a href="#features">⭐ Kyun Hamse</a>
+    <a href="#delivery">🚚 Delivery</a>
+    <a href="#contact">📞 Rabta</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Karachi se — Poore Pakistan mein Delivery</div>
+    <h1>Behtareen <em>Bakra Bakri</em><br>seedha aapke darwaze tak</h1>
+    <p>Sehat mand, asli nasl ke bakre, bakrian aur dumbe — Qurbani, Eid aur roz marra ke liye. Har janwar personally checked, seedha Karachi se deliver.</p>
+    <div class="btns">
+      <button class="btn btn-primary" onclick="document.getElementById('animals').scrollIntoView({behavior:'smooth'})">🐐 Janwar Dekhen</button>
+      <a href="https://wa.me/923152612680" target="_blank" class="btn btn-ghost">💬 WhatsApp Karen</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="badge badge-qurbani">🐐 Qurbani Ready</div>
+    <div class="badge badge-cod">✅ COD Available</div>
+    <svg class="goat-svg" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+      <!-- Body -->
+      <ellipse cx="100" cy="115" rx="58" ry="38" fill="#c8a87a"/>
+      <!-- Head -->
+      <circle cx="152" cy="82" r="26" fill="#c8a87a"/>
+      <!-- Snout -->
+      <ellipse cx="168" cy="90" rx="14" ry="10" fill="#b8956a"/>
+      <!-- Eye -->
+      <circle cx="156" cy="76" r="4" fill="#1a0a00"/>
+      <circle cx="157" cy="75" r="1.5" fill="#fff"/>
+      <!-- Ear -->
+      <ellipse cx="142" cy="64" rx="8" ry="14" fill="#c8a87a" transform="rotate(-20 142 64)"/>
+      <ellipse cx="142" cy="65" rx="4" ry="9" fill="#e8c4a0" transform="rotate(-20 142 65)"/>
+      <!-- Horns -->
+      <path d="M148 58 Q140 40 132 38" stroke="#8a6a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M155 56 Q152 36 148 34" stroke="#8a6a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- Legs -->
+      <rect x="68" y="148" width="14" height="28" rx="6" fill="#b8956a"/>
+      <rect x="90" y="150" width="14" height="26" rx="6" fill="#b8956a"/>
+      <rect x="112" y="148" width="14" height="28" rx="6" fill="#b8956a"/>
+      <rect x="132" y="150" width="14" height="26" rx="6" fill="#b8956a"/>
+      <!-- Hooves -->
+      <rect x="68" y="172" width="14" height="6" rx="3" fill="#5a4a2a"/>
+      <rect x="90" y="172" width="14" height="6" rx="3" fill="#5a4a2a"/>
+      <rect x="112" y="172" width="14" height="6" rx="3" fill="#5a4a2a"/>
+      <rect x="132" y="172" width="14" height="6" rx="3" fill="#5a4a2a"/>
+      <!-- Tail -->
+      <path d="M44 108 Q28 96 32 84" stroke="#c8a87a" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <!-- Beard -->
+      <path d="M166 98 Q170 108 166 116" stroke="#b8956a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Spots -->
+      <ellipse cx="85" cy="108" rx="16" ry="10" fill="#a87848" opacity=".5"/>
+      <ellipse cx="118" cy="100" rx="10" ry="8" fill="#a87848" opacity=".4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner ui">
+    <div><div class="stat-num">200+</div><div class="stat-label">Janwar Farokht</div></div>
+    <div><div class="stat-num">50+</div><div class="stat-label">Shahar Deliver</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Sehat Checked</div></div>
+    <div><div class="stat-num">⭐ 4.9</div><div class="stat-label">Customer Rating</div></div>
+  </div>
+</div>
+
+<!-- ANIMALS -->
+<section class="section" id="animals">
+  <div class="sec-head">
+    <div class="sec-eyebrow">Hamare Janwar</div>
+    <h2>Bakra · Bakri · Dumba</h2>
+  </div>
+  <div class="filters ui" id="filterBtns">
+    <button class="fbtn active" data-cat="all">Sab</button>
+    <button class="fbtn" data-cat="Bakra">Bakra</button>
+    <button class="fbtn" data-cat="Bakri">Bakri</button>
+    <button class="fbtn" data-cat="Dumba">Dumba</button>
+    <button class="fbtn" data-cat="Qurbani">Qurbani Special</button>
+  </div>
+  <div class="pgrid" id="animalGrid"></div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="sec-head">
+    <div class="sec-eyebrow">Kyun Hamse Lein</div>
+    <h2>Bharosa aur zimmedari</h2>
+  </div>
+  <div class="feat-grid">
+    <div class="feat"><div class="ic">🩺</div><h3>Sehat Checked</h3><p>Har janwar veterinary doctor se check shuda, bilkul sehat mand aur bebaq.</p></div>
+    <div class="feat"><div class="ic">🚚</div><h3>Pakistan Wide Delivery</h3><p>Karachi se poore Pakistan mein deliver karte hain — 2 se 4 din mein.</p></div>
+    <div class="feat"><div class="ic">💰</div><h3>Cash on Delivery</h3><p>Pehle janwar aayega, phir payment — koi advance nahi chahiye.</p></div>
+    <div class="feat"><div class="ic">📸</div><h3>Live Video Call</h3><p>Khareedne se pehle janwar ki live video dekh sakte hain.</p></div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="section" id="delivery">
+  <div class="delivery-grid">
+    <div>
+      <h2>Delivery kaise hoti hai?</h2>
+      <p>Aapka order milne ke baad 24 ghante mein janwar taiyaar karke bhej diya jata hai. Poore Pakistan mein safe delivery guaranteed.</p>
+      <ul class="dsteps">
+        <li><div class="dnum">1</div><div><b>Order ya Inquiry</b><span>WhatsApp ya call par janwar select karen</span></div></li>
+        <li><div class="dnum">2</div><div><b>Live Video Confirmation</b><span>Delivery se pehle janwar live dekhen</span></div></li>
+        <li><div class="dnum">3</div><div><b>Safe Packing & Dispatch</b><span>Janwar ko safely vehicle mein load kiya jata hai</span></div></li>
+        <li><div class="dnum">4</div><div><b>Darwaze pe Delivery</b><span>COD — janwar aate hi payment karen</span></div></li>
+      </ul>
+    </div>
+    <div class="contact-card" id="contact">
+      <h3>📞 Abhi Inquiry Karen</h3>
+      <form onsubmit="sendInquiry(event)">
+        <label>Aapka Naam</label>
+        <input type="text" required placeholder="Pura naam">
+        <label>Phone Number</label>
+        <input type="tel" required placeholder="03XX-XXXXXXX">
+        <label>City</label>
+        <select required>
+          <option value="">Shahar chunen</option>
+          <option>Karachi</option><option>Lahore</option><option>Islamabad</option>
+          <option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option>
+          <option>Peshawar</option><option>Quetta</option><option>Hyderabad</option>
+          <option>Sukkur</option><option>Bahawalpur</option><option>Doosra Shahar</option>
+        </select>
+        <label>Kaunsa Janwar Chahiye?</label>
+        <select required>
+          <option value="">Select karen</option>
+          <option>Bakra</option><option>Bakri</option><option>Dumba</option>
+          <option>Qurbani Bakra</option><option>Nahi pata — suggest karen</option>
+        </select>
+        <label>Paigham (Optional)</label>
+        <textarea rows="2" placeholder="Koi khaas demand ya sawal..."></textarea>
+        <button type="submit" class="btn btn-primary ui" style="width:100%;justify-content:center;">📲 Inquiry Bhejein</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="cta-banner">
+    <h2>🐐 Aaj hi apna janwar book karen</h2>
+    <p>Stok limited hai — Qurbani season mein jaldi book karen, COD available hai poore Pakistan mein.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/923152612680" target="_blank" class="btn" style="background:#25d366;color:#fff;">💬 WhatsApp Karen</a>
+      <a href="tel:03152612680" class="btn" style="background:#fff;color:var(--green-dark);">📞 Call Karen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div style="width:36px;height:36px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🐐</div>
+        <span style="font-size:18px;font-weight:700;color:var(--green);">Maweshi Ghar</span>
+      </div>
+      <p style="color:var(--text-soft);font-size:13px;max-width:260px;line-height:1.6;">Sehat mand aur asli nasl ke janwar — Karachi se poore Pakistan mein delivery.</p>
+    </div>
+    <div>
+      <h4>Janwar</h4>
+      <ul><li><a href="#animals">Bakra</a></li><li><a href="#animals">Bakri</a></li><li><a href="#animals">Dumba</a></li><li><a href="#animals">Qurbani Special</a></li></ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul><li><a href="#delivery">Delivery Info</a></li><li><a href="#contact">Inquiry Karen</a></li></ul>
+    </div>
+    <div>
+      <h4>Rabta</h4>
+      <ul>
+        <li>📞 0315-2612680 | 0315-2292047 | 0310-1196654</li>
+        <li>💬 WhatsApp Available</li>
+        <li>📍 Karachi, Pakistan</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <div>© 2026 Maweshi Ghar. Sab huqooq mahfooz hain.</div>
+    <div>Karachi 🇵🇰 se poore Pakistan ke liye</div>
+  </div>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="inquiryModal">
+  <div class="modal" id="inquiryModalBody">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <h3 id="modalTitle">Inquiry Karen</h3>
+      <button class="close-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="msub" id="modalSub">Apna janwar select kar liya — ab inquiry bhejein.</div>
+    <form onsubmit="sendModalInquiry(event)" id="modalForm">
+      <label>Aapka Naam</label>
+      <input type="text" required placeholder="Pura naam">
+      <label>Phone Number</label>
+      <input type="tel" required placeholder="03XX-XXXXXXX">
+      <label>City</label>
+      <select required>
+        <option value="">Shahar chunen</option>
+        <option>Karachi</option><option>Lahore</option><option>Islamabad</option>
+        <option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option>
+        <option>Peshawar</option><option>Quetta</option><option>Hyderabad</option><option>Doosra Shahar</option>
+      </select>
+      <button type="submit" class="btn btn-primary ui" style="width:100%;justify-content:center;margin-top:6px;">📲 Inquiry Bhejein</button>
+    </form>
+  </div>
+</div>
+
+<!-- THEME SWITCHER -->
+<button class="theme-fab ui" id="themeFab" title="Theme Badlen">🎨</button>
+<div class="theme-panel" id="themePanel">
+  <h4>🎨 Theme Chunen</h4>
+  <div id="themeList"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---- MOBILE MENU ---- */
+const mobMenuBtn = document.getElementById('mobMenuBtn');
+const mobNav = document.getElementById('mobNav');
+mobMenuBtn.addEventListener('click', ()=>{
+  mobNav.classList.toggle('open');
+  mobMenuBtn.textContent = mobNav.classList.contains('open') ? '✕' : '☰';
+});
+mobNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobNav.classList.remove('open'); mobMenuBtn.textContent='☰';
+}));
+
+/* ---- ANIMALS DATA ---- */
+const animals = [
+  {id:1,name:'Kala Bakra',cat:'Bakra',breed:'Beetal',weight:'35-40 kg',age:'1.5 Saal',desc:'Khubsoorat kala beetal bakra, mota taaza aur sehat mand. Qurbani ke liye bilkul mozo.',tag:'qurbani',color:'#2c2c2c'},
+  {id:2,name:'Safed Dumba',cat:'Dumba',breed:'Kajli',weight:'45-50 kg',age:'2 Saal',desc:'Asli kajli nasl ka dumba, motaa aur lambe baalon wala. Eid ke liye perfect.',tag:'available',color:'#e8e0d0'},
+  {id:3,name:'Bhuri Bakri',cat:'Bakri',breed:'Desi',weight:'25-28 kg',age:'1 Saal',desc:'Doodh dene wali bakri, seedhi aur achi aadat wali. Ghar ke liye behtareen.',tag:'available',color:'#8a6a4a'},
+  {id:4,name:'Cheetla Bakra',cat:'Bakra',breed:'Nachi',weight:'40-45 kg',age:'2 Saal',desc:'Cheetla rang ka nachi bakra — wazan mein bhari aur dikhne mein lajawaab.',tag:'qurbani',color:'#c8a87a'},
+  {id:5,name:'Lal Dumba',cat:'Dumba',breed:'Lohi',weight:'55-60 kg',age:'2.5 Saal',desc:'Wazan mein sabse bhari lohi nasl ka dumba. Qurbani ke liye sabse behtar intikhaab.',tag:'qurbani',color:'#8b3a1a'},
+  {id:6,name:'Kali Bakri',cat:'Bakri',breed:'Beetal',weight:'22-26 kg',age:'8 Maheene',desc:'Choti umra ki sehat mand bakri, aage doodh dene ke liye ideal.',tag:'available',color:'#1a1a1a'},
+  {id:7,name:'Safed Bakra',cat:'Qurbani',breed:'Gulabi',weight:'50-55 kg',age:'2 Saal',desc:'Bara aur khubsoorat gulabi nasl ka safed bakra — Qurbani ke liye special stock.',tag:'qurbani',color:'#f0e8dc'},
+  {id:8,name:'Siyah Dumba',cat:'Qurbani',breed:'Kajli',weight:'60-65 kg',age:'3 Saal',desc:'Is saal ka sabse bhari dumba — sirf Qurbani ke liye limited stock mein.',tag:'qurbani',color:'#2a1a0a'},
+  {id:9,name:'Desi Bakra',cat:'Bakra',breed:'Desi',weight:'28-32 kg',age:'1 Saal',desc:'Asli desi bakra — qudrati khurak par pala hua, bilkul healthy.',tag:'available',color:'#7a5a3a'},
+];
+
+function animalSVG(color){
+  const c = color; const dark = '#5a3a1a';
+  return `<svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="78" cy="92" rx="46" ry="30" fill="${c}" stroke="#0003" stroke-width="1"/>
+    <circle cx="122" cy="66" r="22" fill="${c}" stroke="#0003" stroke-width="1"/>
+    <ellipse cx="136" cy="73" rx="12" ry="8" fill="${c==='#f0e8dc'||c==='#e8e0d0'?'#d8c8b0':dark}"/>
+    <circle cx="126" cy="60" r="3.5" fill="#1a0a00"/>
+    <circle cx="127" cy="59" r="1.2" fill="#fff"/>
+    <ellipse cx="112" cy="50" rx="6" ry="11" fill="${c}" transform="rotate(-15 112 50)"/>
+    <path d="M118 46 Q110 30 104 28" stroke="${dark}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M124 44 Q122 28 118 26" stroke="${dark}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <rect x="50" y="118" width="11" height="20" rx="5" fill="${dark}"/>
+    <rect x="66" y="120" width="11" height="18" rx="5" fill="${dark}"/>
+    <rect x="86" y="118" width="11" height="20" rx="5" fill="${dark}"/>
+    <rect x="102" y="120" width="11" height="18" rx="5" fill="${dark}"/>
+    <path d="M34 86 Q22 76 26 66" stroke="${c}" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </svg>`;
+}
+
+const grid = document.getElementById('animalGrid');
+function renderAnimals(filter='all'){
+  grid.innerHTML='';
+  animals.filter(a=>filter==='all'||a.cat===filter).forEach(a=>{
+    const card=document.createElement('div');
+    card.className='pcard';
+    card.innerHTML=`
+      <div class="pcard-img">
+        <span class="ptag ${a.tag==='qurbani'?'tag-qurbani':'tag-available'}">${a.tag==='qurbani'?'🐐 Qurbani':'✅ Available'}</span>
+        ${animalSVG(a.color)}
+      </div>
+      <div class="pcard-body">
+        <div class="pcat">${a.cat}</div>
+        <div class="pname">${a.name}</div>
+        <div class="pdetails">
+          <div class="pdetail">⚖️ ${a.weight}</div>
+          <div class="pdetail">📅 ${a.age}</div>
+          <div class="pdetail">🐾 ${a.breed}</div>
+          <div class="pdetail">✅ Checked</div>
+        </div>
+        <p class="pdesc">${a.desc}</p>
+        <div class="pfoot">
+          <a href="https://wa.me/923152612680?text=Assalam+o+Alaikum!+Mujhe+${encodeURIComponent(a.name)}+ke+baare+mein+maloomat+chahiye." target="_blank" class="wa-btn">💬 WhatsApp</a>
+          <button class="inquiry-btn" onclick="openInquiry('${a.name}','${a.cat}')">📞 Inquiry</button>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+renderAnimals();
+
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    renderAnimals(b.dataset.cat);
+  });
+});
+
+/* ---- INQUIRY MODAL ---- */
+function openInquiry(name, cat){
+  document.getElementById('modalTitle').textContent = name + ' — Inquiry';
+  document.getElementById('modalSub').textContent = cat + ' — Apni details dein, hum contact karenge.';
+  document.getElementById('inquiryModal').classList.add('open');
+}
+function closeModal(){ document.getElementById('inquiryModal').classList.remove('open'); }
+document.getElementById('inquiryModal').addEventListener('click',(e)=>{if(e.target===document.getElementById('inquiryModal'))closeModal();});
+
+function sendModalInquiry(e){
+  e.preventDefault();
+  document.getElementById('inquiryModalBody').innerHTML=`<div class="success-box"><div class="check">✅</div><h3>Inquiry Mili!</h3><p style="color:var(--text-soft);font-family:'Segoe UI',sans-serif;font-size:14px;margin-top:8px;">Hamari team jald hi <b>0315-8630825</b> se aapko call karegi.</p><button class="btn btn-primary ui" style="margin-top:16px;" onclick="closeModal();location.reload()">Theek Hai</button></div>`;
+}
+
+function sendInquiry(e){
+  e.preventDefault();
+  showToast('✅ Inquiry mili! Jald call karenge.');
+  e.target.reset();
+}
+
+/* ---- THEMES ---- */
+const themes=[
+  {id:'light',label:'Sabz (Din)',dot:'#2d6a2d',bg:'#f5f9f2'},
+  {id:'dark',label:'Sabz (Raat)',dot:'#4a9c4a',bg:'#0e160e'},
+  {id:'brown',label:'Mitti Rang',dot:'#8b5e3c',bg:'#faf5ef'},
+  {id:'brown-dark',label:'Mitti (Raat)',dot:'#c49a6c',bg:'#140e08'},
+  {id:'blue',label:'Neela (Din)',dot:'#1a6ea8',bg:'#f0f6ff'},
+  {id:'blue-dark',label:'Neela (Raat)',dot:'#5dade2',bg:'#071828'},
+];
+const extraCSS=`
+html[data-theme="brown"]{--green:#8b5e3c;--green-light:#b07840;--green-dark:#5a3a1a;--gold:#c9a227;--bg:#faf5ef;--bg-2:#f0e5d5;--text:#2e1a0a;--text-soft:#8b6040;--card:#fff;--border:#ddc8a8;--shadow:0 8px 28px rgba(90,58,26,.1);--accent:#e8650a;}
+html[data-theme="brown-dark"]{--green:#c49a6c;--green-light:#d4aa7c;--green-dark:#5a3a1a;--gold:#c9a227;--bg:#140e08;--bg-2:#1e1408;--text:#f0e5d5;--text-soft:#a07848;--card:#1c1208;--border:#3a2810;--shadow:0 8px 28px rgba(0,0,0,.45);--accent:#e8650a;}
+html[data-theme="blue"]{--green:#1a6ea8;--green-light:#2980b9;--green-dark:#0d3b6b;--gold:#c9a227;--bg:#f0f6ff;--bg-2:#d6eaf8;--text:#0a1f3a;--text-soft:#2c6497;--card:#fff;--border:#aed6f1;--shadow:0 8px 28px rgba(13,59,107,.08);--accent:#e8650a;}
+html[data-theme="blue-dark"]{--green:#5dade2;--green-light:#2980b9;--green-dark:#0d3b6b;--gold:#c9a227;--bg:#071828;--bg-2:#0d2438;--text:#d6eaf8;--text-soft:#7fb3d3;--card:#0a1e30;--border:#1a3a58;--shadow:0 8px 28px rgba(0,0,0,.45);--accent:#e8650a;}`;
+const styleEl=document.createElement('style');
+styleEl.textContent=extraCSS;
+document.head.appendChild(styleEl);
+
+function applyTheme(id){
+  document.documentElement.setAttribute('data-theme',id);
+  localStorage.setItem('maweshi-theme',id);
+  document.getElementById('themeToggle').textContent=id.includes('dark')?'☀️':'🌙';
+  document.querySelectorAll('.trow').forEach(r=>r.classList.toggle('active',r.dataset.tid===id));
+}
+const tl=document.getElementById('themeList');
+tl.innerHTML=themes.map(t=>`<div class="trow" data-tid="${t.id}" onclick="applyTheme('${t.id}')"><div class="tdot" style="background:${t.dot};"></div><span class="tlabel">${t.label}</span></div>`).join('');
+
+const themeFab=document.getElementById('themeFab');
+const themePanel=document.getElementById('themePanel');
+themeFab.addEventListener('click',(e)=>{e.stopPropagation();themePanel.classList.toggle('open');});
+document.addEventListener('click',(e)=>{if(!themePanel.contains(e.target)&&e.target!==themeFab)themePanel.classList.remove('open');});
+
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')||'light';
+  const next=cur.includes('dark')?cur.replace('-dark','').replace('dark','light'):((cur==='light')?'dark':cur+'-dark');
+  applyTheme(next==='light-dark'?'dark':next);
+});
+applyTheme(localStorage.getItem('maweshi-theme')||'light');
+
+/* ---- TOAST ---- */
+let tt;
+function showToast(text){
+  const t=document.getElementById('toast');
+  t.textContent=text;t.classList.add('show');
+  clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2800);
+}
+</script>
+</body>
+</html>
